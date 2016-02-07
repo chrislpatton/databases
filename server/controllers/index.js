@@ -6,7 +6,7 @@ var parser = require('body-parser');
 var app = express();
 //module.exports.app = app;
 
-////// DATA and ROUTE manipulation /////////////
+//////////// DATA and ROUTE manipulation /////////////
 
 module.exports = {
   // models.messages.get 
@@ -36,6 +36,8 @@ module.exports = {
     post: function (req, res) {
       // express way of parsing incoming POST data
       app.use(parser.json()) 
+      // express way of handling income data: req.body
+      console.log('REQ BODY', req.body)
       models.users.post(req.body);
 
       
